@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApplication8.Models.Customer>
+@{
+    ViewBag.Title = "list";
+}
+
+<td>@Html.ActionLink("Create New Customer", "register")</td>
+
+<h2>list</h2>
+<table>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.Id</td>
+            <td>@d.Name</td>
+            <td>@d.Age</td>
+            <td>@Html.ActionLink("Edit","Edit",new { id= d.Id})</td>
+            <td>@Html.ActionLink("Delete","Delete",new { id= d.Id})</td>
+        </tr>
+    }
+
+    @Session["Name"]
+
+</table>
+
+<h2>@ViewBag.m</h2>
